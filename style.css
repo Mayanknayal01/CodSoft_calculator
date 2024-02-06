@@ -1,0 +1,234 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 80vh;
+    margin: 0;
+    background-color: lightskyblue;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+header{
+    background-color: black;
+}
+
+.neonText {
+    animation: flicker 1.5s infinite alternate;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5rem;   
+}
+
+/* Flickering animation */
+@keyframes flicker {
+    
+0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+    text-shadow:
+        0 0 0.4rem #fff,
+        0 0 1.1rem #fff,
+        0 0 1.9rem #fff,
+        0 0 4rem #0fa,
+        0 0 8rem #0fa,
+        0 0 9rem #0fa,
+        0 0 10rem #0fa,
+        0 0 15rem #0fa;
+
+    }
+        20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+}
+
+#calculator {
+    width: 35rem;
+    height: 35rem;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    background-color: black;
+    box-shadow: 3rem 3rem 2rem rgba(0, 0, 0, 0.4);
+
+}
+
+input[type="text"] {
+    width: 94%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+}
+
+.first {
+    display: flex;
+}
+
+.first p{
+    border: solid black 0.1rem;
+    font-size: 1.6rem;
+    color: lightgreen;
+    text-shadow:
+        0 0 0.7rem #fff,
+        0 0 1rem #fff,
+        0 0 2.1rem #fff,
+        0 0 4.2rem #0fa,
+        0 0 8.2rem #0fa,
+        0 0 9.2rem #0fa,
+        0 0 10.2rem #0fa,
+        0 0 15.1rem #0fa;
+}
+
+.custom-btn {
+    color: #fff;
+    width: 7rem;
+    height: 5rem;
+    margin: 0.5rem;
+    font-size: 1.8rem;
+    padding: 1rem 2.5rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    border-radius: 0.5rem;
+}
+
+.btn-1 {
+    background: #21ebff;
+    line-height: 4.2rem;
+    padding: 0;
+    border: none;
+}
+.btn-1:hover{
+    background: transparent;
+    color: #21ebff;
+}
+.btn-1:before,
+.btn-1:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:0.2rem;
+    background: #21ebff;
+    width:0;
+    box-shadow:  0 0 0.5rem #21ebff,  0 0 0.5rem #21ebff inset;
+    transition:400ms ease all;
+}
+.btn-1:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.btn-1:hover:before,
+.btn-1:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.oerator {
+    background: #8ce436;
+    line-height: 4rem;
+    padding: 0;
+    border: none;
+    box-shadow: 0 0 0.5rem #8ce436;
+}
+.oerator span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.oerator:hover{
+    background: transparent;
+}
+.oerator:before,
+.oerator:after {
+    position: absolute;
+    content: "";
+    height: 0%;
+    width: 0.2rem;
+    background: #8ce436;
+    box-shadow: 0 0 0.5rem #8ce436;
+}
+.oerator:before {
+    right: 0;
+    top: 0;
+    transition: all 500ms ease;
+}
+.oerator:after {
+    left: 0;
+    bottom: 0;
+    transition: all 500ms ease;
+}
+.oerator:hover:before {
+    transition: all 500ms ease;
+    height: 100%;
+}
+.oerator:hover:after {
+    transition: all 500ms ease;
+    height: 100%;
+}
+.oerator span:before,
+.oerator span:after {
+    position: absolute;
+    content: "";
+    background: #8ce436;
+    box-shadow: 0 0 0.5rem #8ce436;
+}
+.oerator span:before {
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 0.2rem;
+    transition: all 500ms ease;
+}
+.oerator span:after {
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    height: 0.2rem;
+    transition: all 500ms ease;
+}
+.oerator span:hover:before {
+    width: 100%;
+}
+.oerator span:hover:after {
+    width: 100%;
+}
+
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media(max-width: 520px){
+    #calculator {
+        width: 30rem;
+        height: 30rem;
+    }
+    .custom-btn {
+        width: 6.3rem;
+        height: 3.8rem;
+    }
+    .first p {
+        font-size: 1.43rem;
+    }
+}
